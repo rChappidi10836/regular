@@ -1,0 +1,5 @@
+{
+  "name": "Code Animation Generator",
+  "description": "A web application that takes a textual explanation of code or an algorithm and generates an animated visual storyboard to help understand it step by step. Powered by Gemini API.",
+  "requestFramePermissions": []
+}

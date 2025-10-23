@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code Animation Generator</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      body {
+        font-family: 'Inter', sans-serif; /* A common modern sans-serif font */
+      }
+      /* Custom styles for array element animations and highlights */
+      .array-element-highlight {
+        box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.7); /* sky-500 with opacity */
+        transform: scale(1.1);
+        border-color: rgba(59, 130, 246, 0.9);
+      }
+      .array-element-changed {
+        animation: pulse-emerald 0.8s ease-out;
+        border-color: #10B981; /* emerald-500 */
+      }
+      @keyframes pulse-emerald {
+        0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+        50% { transform: scale(1.15); box-shadow: 0 0 0 10px rgba(16, 185, 129, 0); }
+        100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+      }
+      .highlight-line {
+        background-color: rgba(59, 130, 246, 0.35); /* sky-500 with increased opacity for better visibility */
+        display: block; /* Ensure it takes full width for background */
+      }
+      /* Custom scrollbar for better aesthetics in dark mode */
+      .overflow-auto {
+        scrollbar-width: thin;
+        scrollbar-color: #4B5563 #1F2937; /* gray-600 for thumb, gray-800 for track */
+      }
+      .overflow-auto::-webkit-scrollbar {
+        width: 8px;
+        height: 8px;
+      }
+      .overflow-auto::-webkit-scrollbar-track {
+        background: #1F2937; /* gray-800 */
+        border-radius: 10px;
+      }
+      .overflow-auto::-webkit-scrollbar-thumb {
+        background-color: #4B5563; /* gray-600 */
+        border-radius: 10px;
+        border: 2px solid #1F2937; /* padding around thumb */
+      }
+      .overflow-auto::-webkit-scrollbar-thumb:hover {
+        background-color: #6B7280; /* gray-500 */
+      }
+      /* Add a default font if Tailwind's default is not sufficient */
+      @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+    </style>
+<script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react@^19.1.0",
+    "react-dom/": "https://esm.sh/react-dom@^19.1.0/",
+    "react/": "https://esm.sh/react@^19.1.0/",
+    "@google/genai": "https://esm.sh/@google/genai@^1.2.0"
+  }
+}
+</script>
+</head>
+<body class="bg-gray-900">
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+</body>
+</html>
